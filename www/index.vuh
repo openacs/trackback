@@ -1,0 +1,87 @@
+# handle trackback pings
+# we add them as general comments
+# the rest of the URL should be the object_id
+
+ad_page_contract {
+	handle trackback pings
+} {
+	{title ""}
+	{url ""}
+	{excerpt ""}
+	{blog_name ""}
+} -validate {
+	url_not_empty { if { [empty_string_p $url] } {
+		# return formatted error here
+		}
+	}
+}
+
+set object_id [ad_conn path_info]
+
+# check for public allowed comments
+set party_id [acs_magic_object "the_public"]
+set user_id [ad_conn user_id]
+set permission_p [permission::permission_p -object_id $object_id \
+                                           -party_id $user_id \
+                                           -privilege general_comments_create]
+if { $permission_p } {
+
+# we might want to request the URL to see if they really link to us
+# this will eventually be a parameter
+set check_url 0
+
+    	if {[string equal $check_url 1]} {
+	#how big might this be?
+		set url_content [util_httpget $url]
+	}
+	
+	# can we add a person for people to keep the email straight? That's an
+	# interesting idea
+
+	set error_p 0
+	set error_message ""
+
+	set is_live [ad_parameter AutoApproveCommentsP {general-comments} {t}]
+
+	set creation_ip [ad_conn peeraddr]
+
+	set comment_id [db_nextval acs_object_id_seq]
+	set content "$excerpt"
+	set comment_mime_type text/html
+	
+	if {[empty_string_p $blog_name]} {
+		set blog_name $url
+        }
+	if {[empty_string_p $title]} {
+	set title "Trackback from $blog_name"
+	} 
+	trackback::new \
+	    -tb_url $url \
+	    -blog_name $blog_name \
+	    -object_id $object_id \
+	    -comment_id $comment_id \
+	    -user_id "" \
+	    -creation_ip $creation_ip \
+	    -content $content \
+	    -comment_mime_type $comment_mime_type \
+	    -is_live $is_live \
+	    -title $title \
+	    -context_id $object_id
+	if {[empty_string_p $comment_id]} {
+		set error_p 1
+		set error_message "Error creating trackback entry"
+	}
+
+} else {
+       set error_p 1 
+       set error_message "<message>Trackback not accepted for this item</message>"
+}
+
+
+ns_return 200 text/html "
+<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>
+<response>
+<error>$error_p</error>
+$error_message
+</response>
+"
