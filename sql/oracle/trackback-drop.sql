@@ -9,8 +9,8 @@ delete from general_comments gc where exists
 	where tb.comment_id=gc.comment_id);
 
 begin
-for v_id in select comment_id from trackback_pings
-    acs_message.delete(v_id);
+for v_row in select comment_id from trackback_pings
+    acs_message.delete(v_row.comment_id);
 loop;
 end;
 /
