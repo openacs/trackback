@@ -114,7 +114,7 @@ ad_proc -public trackback::get_ping_url {
     @param data html content to search
     @param link URL of item linked to, used to find the correct trackback URL if more than one trackback RDF section is in data
 
-@returns ping_url URL of trackback link for the content provided or empty string if no trackabck info is found
+@return ping_url URL of trackback link for the content provided or empty string if no trackabck info is found
 } {
     set ping_url ""
     set method ""
