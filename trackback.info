@@ -8,7 +8,7 @@
     <singleton-p>t</singleton-p>
     <auto-mount>tb</auto-mount>
 
-    <version name="0.1d2" url="http://openacs.org/repository/download/apm/trackback-0.1d2.apm">
+    <version name="0.1d3" url="http://openacs.org/repository/download/apm/trackback-0.1d3.apm">
         <owner url="mailto:dave@thedesignexperience.org">Dave Bauer</owner>
         <summary>Support for sending and receiving trackback pings.</summary>
         <release-date>2003-09-30</release-date>
@@ -17,7 +17,7 @@
 for use with lars-blogger.
 </description>
 
-        <provides url="trackback" version="0.1d2"/>
+        <provides url="trackback" version="0.1d3"/>
         <requires url="general-comments" version="4.0"/>
 
         <callbacks>
