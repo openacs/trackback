@@ -7,6 +7,7 @@
 
 create table trackback_pings (
  	tb_url	varchar(1000),
+	name	varchar(1000),
 	comment_id	integer
 			constraint
 			tb_pings_comment_id_fk 
