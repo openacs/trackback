@@ -5,7 +5,7 @@
     <package-name>Trackback</package-name>
     <pretty-plural>Trackbacks</pretty-plural>
     <initial-install-p>f</initial-install-p>
-    <singleton-p>f</singleton-p>
+    <singleton-p>t</singleton-p>
     <auto-mount>tb</auto-mount>
 
     <version name="0.1d1" url="http://openacs.org/repository/download/apm/trackback-0.1d1.apm">
