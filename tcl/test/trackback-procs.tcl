@@ -18,7 +18,7 @@ aa_register_case trackback_new {
             set object_id [ad_conn path_info]
             set comment_id [db_nextval acs_object_id_seq]
             
-            # Add entry
+            # Add trackback
             trackback::new \
                 -tb_url $tb_url \
                 -blog_name "Foo" \
