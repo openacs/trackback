@@ -12,6 +12,16 @@ ad_page_contract {
 } -validate {
 	url_not_empty { if { [empty_string_p $url] } {
 		# return formatted error here
+
+		set error_p 1
+		set error_message "<message>You must specify a URL</message>"
+		ns_return 200 text/html "
+<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>
+<response>
+<error>$error_p</error>
+$error_message
+</response>"
+		ad_script_abort
 		}
 	}
 }
