@@ -6,18 +6,17 @@
     <pretty-plural>Trackbacks</pretty-plural>
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
-    
-    <version name="0.1d" url="http://openacs.org/repository/download/apm/trackback-0.1d.apm">
+    <auto-mount>tb</auto-mount>
+
+    <version name="0.1d1" url="http://openacs.org/repository/download/apm/trackback-0.1d1.apm">
         <owner url="mailto:dave@thedesignexperience.org">Dave Bauer</owner>
         <summary>Support for sending and receiving trackback pings. </summary>
+        <release-date>2003-09-30</release-date>
         <description format="text/html">Implements the trackback ping specification: http://www.movabletype.org/docs/mttrackback.html </description>
 
-        <provides url="trackback" version="0.1d"/>
+        <provides url="trackback" version="0.1d1"/>
         <requires url="general-comments" version="4.0"/>
 
-        <files>
-            <file type="package_spec" path="trackback.info"/>
-        </files>
         <callbacks>
         </callbacks>
         <parameters>
