@@ -176,13 +176,13 @@ ad_proc -public trackback::send_ping {
 	#must be POST
 
 	set form_vars [export_vars -url { url }]
-	if {![empty_string_p excerpt]} {
+	if {![empty_string_p $excerpt]} {
 	    ns_set put $query_set excerpt $excerpt
 	}
-	if {![empty_string_p title]} {
+	if {![empty_string_p $title]} {
 	    ns_set put $query_set title $title
 	}
-	if {![empty_string_p blog_name]} {
+	if {![empty_string_p $blog_name]} {
 	    ns_set put $query_set blog_name $blog_name
 	}
 
