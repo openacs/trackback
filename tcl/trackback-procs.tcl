@@ -34,8 +34,9 @@ ad_proc -public trackback::new {
 		    -is_live $is_live \
 		    -title $title \
 		    -context_id $object_id]
-
+       ns_log notice "Trackback tb_url=$tb_url blog_name=$blog_name"
 	db_dml add_trackback ""
+
     return $comment_id
 }
 
@@ -184,7 +185,9 @@ ad_proc -public trackback::send_ping {
 	    ns_set put $query_set blog_name $blog_name
 	}
 
-	set result [ns_httppost $ping_url "" $query_set]
+	if {[catch {[ns_httppost $ping_url "" $query_set]} result]} {
+	        ns_log notice "trackback: trackback returned: $result"
+	}
     }
     ns_log debug "trackback: trackback returned: $result"
     return $result
