@@ -34,8 +34,8 @@ ad_proc -public trackback::new {
 		    -is_live $is_live \
 		    -title $title \
 		    -context_id $object_id]
-       ns_log notice "Trackback tb_url=$tb_url blog_name=$blog_name"
-	db_dml add_trackback ""
+       ns_log Debug "Trackback tb_url=$tb_url blog_name=$blog_name"
+       db_dml add_trackback ""
 
     return $comment_id
 }
@@ -77,7 +77,7 @@ ad_proc -public trackback::auto_ping {
     # hopefully this will grab anthing starting with http://
     # maybe we need to check other stuff? 
     set links_list [regexp -all -inline {http://[^\"^\s]*} $content]
-    ns_log debug "trackback: List of links $links_list"
+    ns_log Debug "trackback: List of links $links_list"
     # get trackback url
     foreach link $links_list {
 	set result_list [ad_httpget -url $link]
@@ -171,6 +171,7 @@ ad_proc -public trackback::send_ping {
 	ns_log debug "trackback: full url = ${ping_url}&${form_vars}"
 	# old style GET
 	set result [ns_httpget ${ping_url}&${form_vars} 60]
+        ns_log debug "trackback: trackback returned: $result"
     } else {
 	#must be POST
 
@@ -186,9 +187,8 @@ ad_proc -public trackback::send_ping {
 	}
 
 	if {[catch {[ns_httppost $ping_url "" $query_set]} result]} {
-	        ns_log notice "trackback: trackback returned: $result"
+            ns_log debug "trackback: trackback returned: $result"
 	}
     }
-    ns_log debug "trackback: trackback returned: $result"
     return $result
 }
