@@ -19,18 +19,18 @@ aa_register_case trackback_new {
             set comment_id [db_nextval acs_object_id_seq]
             
             # Add entry
-            set entry_id [trackback::new \
-                              -tb_url $tb_url \
-                              -blog_name "Foo" \
-                              -object_id $object_id \
-                              -comment_id $comment_id \
-                              -user_id [ad_conn user_id] \
-                              -creation_ip [ad_conn peeraddr] \
-                              -content "Foo" \
-                              -comment_mime_type "text/plain" \
-                              -is_live f \
-                              -title "Foo" \
-                              -context_id $object_id]
+            trackback::new \
+                -tb_url $tb_url \
+                -blog_name "Foo" \
+                -object_id $object_id \
+                -comment_id $comment_id \
+                -user_id [ad_conn user_id] \
+                -creation_ip [ad_conn peeraddr] \
+                -content "Foo" \
+                -comment_mime_type "text/plain" \
+                -is_live f \
+                -title "Foo" \
+                -context_id $object_id
 
             set success_p [db_string success_p {
                 select 1 from trackback_pings where tb_url = :tb_url
