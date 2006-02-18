@@ -11,7 +11,8 @@
     <version name="0.1" url="http://openacs.org/repository/download/apm/trackback-0.1.apm">
         <owner url="mailto:dave@thedesignexperience.org">Dave Bauer</owner>
         <summary>Support for sending and receiving trackback pings.</summary>
-        <release-date>2006-02-12</release-date>
+        <release-date>2006-02-18</release-date>
+        <vendor url="http://www.openacs.org">OpenACS</vendor>
         <description format="text/html">Implements the trackback ping specification 
 &lt;a href=&quot;http://www.movabletype.org/docs/mttrackback.html&quot;&gt;http://www.movabletype.org/docs/mttrackback.html&lt;/a&gt;,
 for use with lars-blogger.
