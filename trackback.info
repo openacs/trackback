@@ -5,19 +5,21 @@
     <package-name>Trackback</package-name>
     <pretty-plural>Trackbacks</pretty-plural>
     <initial-install-p>f</initial-install-p>
-    <singleton-p>t</singleton-p>
+    <singleton-p>f</singleton-p>
     <auto-mount>tb</auto-mount>
 
-    <version name="0.1d3" url="http://openacs.org/repository/download/apm/trackback-0.1d3.apm">
+    <version name="0.1" url="http://openacs.org/repository/download/apm/trackback-0.1.apm">
         <owner url="mailto:dave@thedesignexperience.org">Dave Bauer</owner>
         <summary>Support for sending and receiving trackback pings.</summary>
-        <release-date>2003-09-30</release-date>
+        <release-date>2006-02-18</release-date>
+        <vendor url="http://www.openacs.org">OpenACS</vendor>
         <description format="text/html">Implements the trackback ping specification 
-&lt;a href="http://www.movabletype.org/docs/mttrackback.html"&gt;http://www.movabletype.org/docs/mttrackback.html&lt;/a&gt;,
+&lt;a href=&quot;http://www.movabletype.org/docs/mttrackback.html&quot;&gt;http://www.movabletype.org/docs/mttrackback.html&lt;/a&gt;,
 for use with lars-blogger.
 </description>
+        <maturity>0</maturity>
 
-        <provides url="trackback" version="0.1d3"/>
+        <provides url="trackback" version="0.1"/>
         <requires url="general-comments" version="4.0"/>
 
         <callbacks>
