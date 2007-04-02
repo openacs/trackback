@@ -20,7 +20,7 @@ for use with lars-blogger.
         <maturity>0</maturity>
 
         <provides url="trackback" version="0.1"/>
-        <requires url="general-comments" version="4.0"/>
+        <requires url="general-comments" version="5.2.0"/>
 
         <callbacks>
         </callbacks>
