@@ -4,7 +4,7 @@
 <master>
 
 <body>
-<h2>Trackback Package Documentation for OpenACS</h2><h3>Background</h3><p>This is an implementation of the <a href="http://www.movabletype.org/docs/mttrackback.html">trackback
+<h1>Trackback Package Documentation for OpenACS</h1><h2>Background</h2><p>This is an implementation of the <a href="http://www.movabletype.org/docs/mttrackback.html">trackback
 specification</a> for use in OpenACS.</p><p>Trackback is a method of notifying a web site that you have
 linked to it. It is most commonly used to link between weblogs. It
 allows writers to comment on posts on other web sites from their
@@ -30,7 +30,7 @@ parameters to the include are:</p><pre>
 # \@param url url of object to trackback (relative to page root)
 # \@param object_id entry_id of entry
 # \@param title title of entry
-</pre><h3>TODO</h3><p>Pending cleanup of general comments to remove dependence on
+</pre><h2>TODO</h2><p>Pending cleanup of general comments to remove dependence on
 acs_messaging, trackback_ping should be a subtype of a
 general_comment object type.</p>
 </body>
