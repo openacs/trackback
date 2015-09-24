@@ -167,7 +167,7 @@ ad_proc -public trackback::send_ping {
     
 
     if {[string equal $method GET]} {
-	set form_vars [export_vars -url {url excerpt title blog_name}]
+	set form_vars [export_vars {url excerpt title blog_name}]
 	ns_log debug "trackback: full url = ${ping_url}&${form_vars}"
 	# old style GET
 	set result [ns_httpget ${ping_url}&${form_vars} 60]
@@ -175,7 +175,7 @@ ad_proc -public trackback::send_ping {
     } else {
 	#must be POST
 
-	set form_vars [export_vars -url { url }]
+	set form_vars [export_vars { url }]
 	if {![empty_string_p $excerpt]} {
 	    ns_set put $query_set excerpt $excerpt
 	}
