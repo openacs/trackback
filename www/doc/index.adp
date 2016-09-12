@@ -13,8 +13,8 @@ own page instead of visiting the other site. Besides this, it
 generally allows writers to learn who is reading and commenting on
 their posts and helps build community.</p>
 <p>A good guide to how it all works is <a href="http://www.movabletype.org/trackback/beginners/" target="new">A
-Beginner's Guide to Trackback (opens in new window)</a> by Mena and
-Ben Trott, the original designers of the Trackback
+Beginner&#39;s Guide to Trackback (opens in new window)</a> by Mena
+and Ben Trott, the original designers of the Trackback
 specificaion.</p>
 <h3>How it works</h3>
 <p>Trackback pings are stored as general-comments. Because
@@ -23,9 +23,9 @@ trackback is not a seperate object_type. This will be fixed in a
 future version. Additional information about the weblog that sent
 the ping is stored in the trackback_pings table.</p>
 <p>Currently any object_id that allows general_comment_create for
-the "Unregistered Vistor" user (user_id 0) can receive a trackback
-ping. That is the only activity required to allow trackback to be
-sent to an object.</p>
+the "Unregistered Vistor" user (user_id 0) can receive a
+trackback ping. That is the only activity required to allow
+trackback to be sent to an object.</p>
 <p>A sample implementation is in the lars-blogger package. To
 display trackbrack information along with comment information,
 include the /packages/trackback/lib/trackback-chunk template in the
