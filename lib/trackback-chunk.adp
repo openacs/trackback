@@ -3,7 +3,7 @@
          xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
 <rdf:Description
     rdf:about="@base_url@@url@"
-    dc:identifer="@base_url@@url@"
+    dc:identifier="@base_url@@url@"
     dc:title="@title@"
     trackback:ping="@base_url@@trackback_url@" />
 </rdf:RDF>
