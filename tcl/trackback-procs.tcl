@@ -148,8 +148,8 @@ ad_proc -public trackback::send_ping {
     {-blog_name ""}
     {-method "POST"}
 } {
-    sends a trackback ping. returns status code if sucessful, or error message
-    if unsucessful
+    sends a trackback ping. returns status code if successful, or error message
+    if unsuccessful
 
     @author Dave Bauer dave@thedesignexperience.org
     @creation-date 2003-04-14
