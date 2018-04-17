@@ -8,7 +8,7 @@ ad_library {
 
 aa_register_case trackback_new {
     Test the trackback::new proc.
-} {    
+} {
 
     aa_run_with_teardown \
         -rollback \
@@ -17,7 +17,7 @@ aa_register_case trackback_new {
             set tb_url "http://foobar.com"
             set object_id [ad_conn path_info]
             set comment_id [db_nextval acs_object_id_seq]
-            
+
             # Add trackback
             trackback::new \
                 -tb_url $tb_url \
@@ -36,6 +36,6 @@ aa_register_case trackback_new {
                 select 1 from trackback_pings where tb_url = :tb_url
             } -default "0"]
 
-            aa_equals "trackback was added succesfully" $success_p 1
+            aa_equals "trackback was added successfully" $success_p 1
         }
 }

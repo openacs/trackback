@@ -18,8 +18,8 @@ and Ben Trott, the original designers of the Trackback
 specificaion.</p>
 <h3>How it works</h3>
 <p>Trackback pings are stored as general-comments. Because
-general_comment is anot a content repostiory content_type,
-trackback is not a seperate object_type. This will be fixed in a
+general_comment is not a content repostiory content_type,
+trackback is not a separate object_type. This will be fixed in a
 future version. Additional information about the weblog that sent
 the ping is stored in the trackback_pings table.</p>
 <p>Currently any object_id that allows general_comment_create for
